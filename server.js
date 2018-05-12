@@ -19,6 +19,28 @@ var PORT = process.env.PORT || 3000;
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
+ap.use(session({
+  secret: 'secret',
+  saveUnitialized: true,
+  resave:true
+}));
+//ExpresssValidator
+app.use(expressValidator({
+  errorFormatter: function(param, msg, value) {
+    var namespace = param.split('.')
+    , root = namespace.shift()
+    , formParam = root;
+    
+    while(namespace.length) {
+      formParam+= '[' + namespace.shift() + ']';
+    }
+    return {
+      param : formParam,
+      msg : msg,
+      value: value
+    };
+  }
+}));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
