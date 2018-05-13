@@ -3,7 +3,6 @@ var path = require('path');
 var db = require("./models");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
-var exphbs = require('express-handlebars');
 var expressValidator = require ('express-validator');
 var flash = require('connect-flash');
 var session = require('express-session');
@@ -19,11 +18,12 @@ var PORT = process.env.PORT || 3000;
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
-ap.use(session({
+app.use(session({
   secret: 'secret',
   saveUnitialized: true,
   resave:true
 }));
+
 //ExpresssValidator
 app.use(expressValidator({
   errorFormatter: function(param, msg, value) {
@@ -41,20 +41,22 @@ app.use(expressValidator({
     };
   }
 }));
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
-
 // parse application/json
 app.use(bodyParser.json());
 
+
 // Set Handlebars.
 var exphbs = require("express-handlebars");
-
+//app.set('views', path.join(__dirname, 'views'));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./controllers/winController.js");
+var routes = require('./routes/index');
+var users = require('./routes/users');
 
 // app.use("/", routes);
 
