@@ -20,7 +20,7 @@ app.use(express.static("public"));
 
 app.use(session({
   secret: 'secret',
-  saveUnitialized: true,
+  saveUninitialized: true,
   resave:true
 }));
 
