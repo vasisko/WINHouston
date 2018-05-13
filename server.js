@@ -24,6 +24,10 @@ app.use(session({
   resave:true
 }));
 
+//Passport initialization
+app.use(passport.initialize());
+app.use(passport.session());
+
 //ExpresssValidator
 app.use(expressValidator({
   errorFormatter: function(param, msg, value) {
@@ -42,6 +46,17 @@ app.use(expressValidator({
   }
 }));
 
+//Connect Flash
+app.use(flash());
+
+//Global Vars
+app.use(function (req, res, next){
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  res.locals.error = req.flash('error');
+  next();
+});
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
@@ -58,7 +73,9 @@ app.set("view engine", "handlebars");
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-// app.use("/", routes);
+app.use("/", routes);
+app.use("/users", users);
+
 
 // Start our server so that it can begin listening to client requests.
 db.sequelize.sync({force: true}).then(function(){
