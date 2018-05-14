@@ -73,8 +73,8 @@ app.set("view engine", "handlebars");
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-app.use("/", routes);
-app.use("/users", users);
+//app.use("/", routes);
+//app.use("/users", users);
 
 
 // Start our server so that it can begin listening to client requests.
