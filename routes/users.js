@@ -2,6 +2,7 @@ console.log("in users.js file");
 var db = require("../models");
 var express = require('express');
 var router = express.Router();
+var bcrypt = require('bcryptjs');
 
 //var passport = require('passport');
 //var LocalStrategy = require('passport-local').Strategy;
@@ -47,23 +48,35 @@ router.post('/register', function (req, res) {
         });
     }
     else {
-        // var newUser = new User({
-        //     name: name,
-        //     email: email,
-        //     username: username,
-        //     password: password
-        // });
-        // User.createUser(newUser, function (err, user) {
-        //     if (err) throw err;
-        //     console.log(user);
-        // });
+        
+        var somePassword = req.body.password;
 
-        // router.post("/users", function(req,res){
-        //     db.User.create(req.body).then(function(dbUser){
-        //         res.json(dbUser);
-        //     })
-        // })
+        var createPassword = function (string) {
+            console.log('starting bcrypt to create password');
+            bcrypt.genSalt(10, (err, salt) => {
+                bcrypt.hash(somePassword, salt, (err, hash) => {
+                    if(err) throw err;
+                    somePassword = hash; 
+                    console.log(somePassword);//***this works to here
+                })
+            });
+        
+        } 
 
+        createPassword(somePassword);
+        console.log(somePassword);//***does not make it here
+
+        // // create user in DB  --- this code writes user data to DB table
+            db.User.create({
+                name: req.body.name,
+                username: req.body.name,
+                email: req.body.email,
+                password: somePassword
+            }).then(function(dbUser){
+                res.json(dbUser); 
+            });
+        
+    
         //  Msg to post on login page:
         req.flash('success_msg', 'You are registered and can now login');
         
