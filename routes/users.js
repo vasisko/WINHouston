@@ -18,6 +18,7 @@ router.get('/login', function (req, res) {
 
 //Incoming form data
 console.log("Here line 20");
+    //create variables for each parameter received from form
 router.post('/register', function (req, res) {
     var name = req.body.name;
     var email = req.body.email;
@@ -26,7 +27,7 @@ router.post('/register', function (req, res) {
     var password2 = req.body.password2;
 
     console.log(req.body);
-    //validate inputs
+    //validate inputs usimg express-validate
     req.checkBody('name', 'Name is required').notEmpty();
     req.checkBody('email', 'Email is required').notEmpty();
     req.checkBody('email', 'Email is not valid').isEmail();
@@ -39,7 +40,9 @@ router.post('/register', function (req, res) {
 
     if (errors) {
         console.log(errors);
+        // if errors in form, return user to registration page to resubmit 
         res.render('register', {
+            //display errors above form...errors displayed via register.handlebars
             errors: errors
         });
     }
@@ -54,12 +57,16 @@ router.post('/register', function (req, res) {
         //     if (err) throw err;
         //     console.log(user);
         // });
-        router.post("/users", function(req,res){
-            db.User.create(req.body).then(function(dbUser){
-                res.json(dbUser);
-            })
-        })
+
+        // router.post("/users", function(req,res){
+        //     db.User.create(req.body).then(function(dbUser){
+        //         res.json(dbUser);
+        //     })
+        // })
+
+        //  Msg to post on login page:
         req.flash('success_msg', 'You are registered and can now login');
+        
         res.redirect('/users/login');
     }
 });
