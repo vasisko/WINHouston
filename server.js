@@ -48,7 +48,6 @@ app.use(expressValidator({
 
 //Connect Flash
 app.use(flash());
-
 //Global Vars
 app.use(function (req, res, next){
   res.locals.success_msg = req.flash('success_msg');
