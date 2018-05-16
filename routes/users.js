@@ -7,7 +7,7 @@ var bcrypt = require('bcryptjs');
 //var passport = require('passport');
 //var LocalStrategy = require('passport-local').Strategy;
 
-var User = require('../models/user.js');
+// var User = require('../models/user.js');
 
 router.get('/register', function (req, res) {
     res.render('register');
@@ -16,7 +16,7 @@ router.get('/register', function (req, res) {
 router.get('/login', function (req, res) {
     res.render('login');
 });
-
+//add router.post for log in
 //Incoming form data
 console.log("Here line 20");
     //create variables for each parameter received from form
@@ -73,7 +73,7 @@ router.post('/register', function (req, res) {
                 email: req.body.email,
                 password: somePassword
             }).then(function(dbUser){
-                res.json(dbUser); 
+                // res.json(dbUser); 
             });
         
     
