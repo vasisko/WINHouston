@@ -21,8 +21,14 @@ router.post('/register', function (req, res) {
 router.get('/' , function (req, res) {
     console.log(req.body);
     console.log('/route was hit resource.js line 23');
-    res.send('/route was hit resource.js line 24');
-});
+// });
+    db.Resources.findAll({})
+    // .then(function(dbPost) {
+    //   res.json(dbPost);
+     res.send('/route was hit resource.js line 24');
+     });
+
+    
 
 
 

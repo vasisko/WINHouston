@@ -75,7 +75,7 @@ var resources = require('./routes/resources');
 
 app.use("/", routes);
 app.use("/users", users);
-app.use("/resource", resources);
+app.use("/resources", resources);
 
 
 
