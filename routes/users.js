@@ -19,7 +19,7 @@ router.get('/login', function (req, res) {
 //add router.post for log in
 //Incoming form data
 console.log("Here line 20");
-    //create variables for each parameter received from form
+//create variables for each parameter received from form
 router.post('/register', function (req, res) {
     var name = req.body.name;
     var email = req.body.email;
@@ -36,7 +36,7 @@ router.post('/register', function (req, res) {
     req.checkBody('password', 'Password is required').notEmpty();
     req.checkBody('password2', 'Passwords do not match').equals(req.body.password);
     console.log("Here line 34");
-    
+
     var errors = req.validationErrors();
 
     if (errors) {
@@ -48,39 +48,39 @@ router.post('/register', function (req, res) {
         });
     }
     else {
-        
+
         var somePassword = req.body.password;
 
         var createPassword = function (string) {
             console.log('starting bcrypt to create password');
             bcrypt.genSalt(10, (err, salt) => {
                 bcrypt.hash(somePassword, salt, (err, hash) => {
-                    if(err) throw err;
-                    somePassword = hash; 
+                    if (err) throw err;
+                    somePassword = hash;
                     console.log(somePassword);//***this works to here
                 })
             });
-        
-        } 
+
+        }
 
         createPassword(somePassword);
         console.log(somePassword);//***does not make it here
 
         // // create user in DB  --- this code writes user data to DB table
-            db.User.create({
-                name: req.body.name,
-                username: req.body.name,
-                email: req.body.email,
-                password: somePassword
-            }).then(function(dbUser){
-                // res.json(dbUser); 
-            });
-        
-    
-        //  Msg to post on login page:
-        req.flash('success_msg', 'You are registered and can now login');
-        
-        res.redirect('/users/login');
+        db.User.create({
+            name: req.body.name,
+            username: req.body.name,
+            email: req.body.email,
+            password: somePassword
+        }).then(function (dbUser) {
+            //  Msg to post on login page:
+            req.flash('success_msg', 'You are registered and can now login');
+
+            res.redirect('/users/login');
+        });
+
+
+
     }
 });
 module.exports = router;
