@@ -1,3 +1,1 @@
-CREATE DATABASE IF NOT EXISTS win;
-
-USE win;
+SELECT * FROM win.resources;

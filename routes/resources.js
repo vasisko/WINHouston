@@ -26,6 +26,7 @@ router.get('/' , function (req, res) {
     // .then(function(dbPost) {
     //   res.json(dbPost);
      res.send('/route was hit resource.js line 24');
+     console.log(db.Resources.findAll({}));
      });
 
     
