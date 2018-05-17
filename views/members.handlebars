@@ -1,5 +1,9 @@
 <h2>Member's Page</h2>
 
-ADD CRUD FORM
+{{!-- ADD CRUD FORM --}}
 
-
+{{#if errors}}
+    {{#each errors}}
+        <div class="alert alert-danger">{{msg}}</div>
+    {{/each}}
+{{/if}}
