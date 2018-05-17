@@ -4,13 +4,8 @@ var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcryptjs');
 
-//var passport = require('passport');
-//var LocalStrategy = require('passport-local').Strategy;
-
-
-
-
-
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 router.post('/register', function (req, res) {
     console.log(req.body);
@@ -28,11 +23,5 @@ router.get('/' , function (req, res) {
      res.send('/route was hit resource.js line 24');
      console.log(db.Resources.findAll({}));
      });
-
-    
-
-
-
-
 
 module.exports = router;
