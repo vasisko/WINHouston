@@ -1,4 +1,4 @@
-console.log("in users.js file");
+console.log("in resource.js file");
 var db = require("../models");
 var express = require('express');
 var router = express.Router();
