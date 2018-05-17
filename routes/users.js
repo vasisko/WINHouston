@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcryptjs');
 
-//var passport = require('passport');
+var passport = require('passport');
 //var LocalStrategy = require('passport-local').Strategy;
 
 // var User = require('../models/user.js');
@@ -16,6 +16,9 @@ router.get('/register', function (req, res) {
 router.get('/login', function (req, res) {
     res.render('login');
 });
+router.get('/members', function (req, res){
+    res.render('members');
+})
 //add router.post for log in
 //Incoming form data
 console.log("Here line 20");
@@ -83,4 +86,39 @@ router.post('/register', function (req, res) {
 
     }
 });
+//Here
+router.post('/login', function (req, res) {
+    
+    var username = req.body.username;
+    var password = req.body.password;
+    
+
+    console.log(req.body);
+    //validate inputs usimg express-validate
+    
+    req.checkBody('username', 'User name is required').notEmpty();
+    req.checkBody('password', 'Password is required').notEmpty();
+
+    var errors = req.validationErrors();
+
+    if (errors) {
+        console.log(errors);
+        // if errors in form, return user to registration page to resubmit 
+        res.render('login', {
+            //display errors above form...errors displayed via register.handlebars
+            errors: errors
+        });
+    }
+    else {
+
+     
+
+        // // create user in DB  --- this code writes user data to DB table
+            //  Msg to post on login page:
+            req.flash('success_msg', 'You are registered and can now login');
+
+            res.redirect('/users/members');
+    }
+        });
+    
 module.exports = router;
