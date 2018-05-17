@@ -74,8 +74,8 @@ var users = require('./routes/users');
 var resources = require('./routes/resources');
 
 app.use("/", routes);
-app.use("/users", users);
-app.use("/resources", resources);
+app.use("/", users);
+app.use("/", resources);
 
 
 

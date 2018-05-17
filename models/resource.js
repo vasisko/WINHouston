@@ -87,7 +87,11 @@ module.exports = function (sequelize, DataTypes) {
     },
     immigration_assist: {
         type: DataTypes.STRING, allowNull: true, defaultValue: false
-    }
+    },
+    
+},
+{
+    timestamps: false
 });
 return Resource;
 
