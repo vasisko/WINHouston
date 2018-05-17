@@ -72,17 +72,24 @@ app.set("view engine", "handlebars");
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var resources = require('./routes/resources');
+var apiroutes = require('./routes/api-routes');
+var htmlroutes = require('./routes/html-routes');
+
 
 app.use("/", routes);
 app.use("/users", users);
-app.use("/resources", resources);
+
+app.use("/", resources);
+app.use("/api-routes", apiroutes);
+app.use("/html-routes", htmlroutes);
+
 
 
 
 
 
 // Start our server so that it can begin listening to client requests.
-db.sequelize.sync({force: true}).then(function(){
+db.sequelize.sync({force: false}).then(function(){
 app.listen(PORT, function() {
  // Log (server-side) when our server has started
  console.log("Server listening on: http://localhost:" + PORT);
