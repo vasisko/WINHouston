@@ -72,10 +72,15 @@ app.set("view engine", "handlebars");
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var resources = require('./routes/resources');
+var apiroutes = require('./routes/api-routes');
+var htmlroutes = require('./routes/html-routes');
+
 
 app.use("/", routes);
 app.use("/users", users);
 app.use("/resources", resources);
+app.use("/api-routes", apiroutes);
+app.use("/html-routes", htmlroutes);
 
 
 
