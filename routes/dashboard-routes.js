@@ -15,7 +15,7 @@ module.exports = function(app) {
 
 // //**************************************
   // GET route for getting all of the resources:  Show all resources in list on members dashboard
-  app.get("/api/resources/", function(req, res) {
+  app.get("/api/resources", function(req, res) {
     db.Resource.findAll({})
       .then(function(dbResource) {
         res.json(dbResource);
