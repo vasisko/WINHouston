@@ -1,2 +1,46 @@
 body{
-    background-color:palegreen;
+    background-color:rgba(255, 0, 119, 0.726);
+    padding-top: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
+   
+}
+/* .navbar-brand{
+    justify-content: center;
+} */
+.navbar-brand{
+    font-size: 50px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.navbar-brand:hover{
+    color:none;
+}
+a{
+    color:teal;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:transparent;
+    /* background-color:lightgreen; */
+    /* color:teal; */
+    color: black;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}  
+
+@media (min-width: 768px){
+.navbar-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+}
