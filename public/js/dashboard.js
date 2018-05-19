@@ -45,16 +45,20 @@ function createResourceRow(resourceData) {
     console.log(resourceData);
     var newTr = $("<tr>");
     newTr.data("resource", resourceData);
-    newTr.append("<td>" + resourceData.name + "</td>");
-    newTr.append("<td>" + resourceData.location + "</td>");
-    newTr.append("<td>" + resourceData.address + "</td>");
-    newTr.append("<td>" + resourceData.website + "</td>");
-    newTr.append("<td>" + resourceData.website + "</td>");
+
+    newTr.append(`<td> ${resourceData.location} </td>`);
+
+    newTr.append(`<td> <span class="font-weight-bold">${resourceData.name}</span> <br> ${resourceData.address} <br> ${resourceData.phone} </td>`);
+   
+    newTr.append(`<td> <a href="${resourceData.website}">${resourceData.website}</a></td>`);
+
+    newTr.append(`<td><mailto:"${resourceData.email}">${resourceData.email}</a></td>`);
+    
     // newTr.append("<td><a style='cursor:pointer;color:red' class='delete-resource'>Delete Author</a></td>");
     return newTr;
   }
 
-  //  itegrate this example code for actually posting the ready to go resource fdata to the page
+  //  integrate this example code for actually posting the ready to go resource fdata to the page
       //// A function for rendering the list of resources to the page
 
   function renderResourceList(rows) {

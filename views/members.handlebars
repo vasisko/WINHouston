@@ -1,5 +1,4 @@
 <h2>Member's Page</h2>
-<h3>Welcome </h3>
 
 {{#if errors}} {{#each errors}}
 <div class="alert alert-danger">{{msg}}</div>
@@ -8,7 +7,7 @@
 <h3>Resource Dashboard</h3>
 <!--List all resources -->
 
-
+<p><a href="addItem.html" target="new">Add an item</a></p>
 
 <form id="dashboardListAll">
 
@@ -40,14 +39,15 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="resources-container">
                 <h4>Resources</h4>
-                <table class="table ">
+                <table class="table">
                     <thead>
                         <tr>
-                            <th>Member Name</th>
                             <th>Location</th>
-                            <th>Address</th>
+                            <th>Member</th>
+                            
                             <th>Website</th>
-                            <th>Services</th>
+                            <th>Email</th>
+                            
                             <!--<th>Delete Item</th>-->
                         </tr>
                     </thead>
