@@ -1,25 +1,35 @@
 
 $(document).ready(function() {
+    $("#resourceTable").hide();
     
     //Event listener to list resources
       $(document).on("click", "#searchAll", searchAll);
-      
+      $(document).on("click", "#reset", reset);
     
 
     function searchAll(event) {
       event.preventDefault();
-      alert("you hit here 1st")
+      
+      
       getResources(); 
     }
-    function getResources() {
-      alert("you hit here 2nd")
-      //**********BREAK HERE!!!!!**********/
 
-        $.get("/resources", function(data) {
+    function reset(event) {
+      location.reload();
+    }
+    function getResources() {
+  
+
+        $.get("/getresources", function(data) {
             console.log(data);
-       
+            $("#resourceForm").hide();
+            $("#resourceTable").show();
+            $("#resourceTable").text(data[0].address);
         });
       }
 
     
+
+
+
 });
