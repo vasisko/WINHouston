@@ -1,6 +1,8 @@
 body{
-    background-color:rgba(0, 81, 255, 0.726);
+    /* background-color:rgba(0, 81, 255, 0.726); */
+    background-color:rgba(0, 183, 255, 0.726);
     padding-top: 60px;
+    padding-bottom: 60px;
     margin-left: 40px;
     margin-right: 40px;
     font-family: Arial, Helvetica, sans-serif;
@@ -17,23 +19,25 @@ body{
     margin-bottom:10px;
 }
 .navbar-brand:hover{
-    color:none;
+    color:gold;
 }
 a{
-    color:teal;
+    color:gold;
 }
 .footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color:rgb(0, 128, 68);
+    background-color: rgba(192, 192, 192, 0.562);
+    /* background-color:rgb(0, 128, 68); */
     /* background-color:lightgreen; */
     /* color:teal; */
     color: black;
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
+    
 
 }  
 
@@ -45,4 +49,9 @@ a{
     margin-right: 40px;
 }
 
+}
+
+
+#success_msg{
+   background-color: red;
 }
