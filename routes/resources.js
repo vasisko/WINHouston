@@ -4,19 +4,19 @@ var express = require('express');
 var router = express.Router();
 
 
-router.get('/resources', function (req, res) {
-    res.render('resources');
-});
+// router.get('/resources', function (req, res) {
+//     res.render('resources');
+// });
 
 console.log("passed get");//MAKES IT HERE
 
-// router.get("/resources", function(req, res) {
-//     db.Resource.findAll({}).then(function(dbResource) {
-//         console.log("In resources.hbrs");
-//         res.json(dbResource);
-//         //res.redirect('/resources');
-//     });
-//   });
+router.get("/getresources", function(req, res) {
+    db.Resource.findAll({}).then(function(dbResource) {
+        console.log("In resources.hbrs");
+        res.json(dbResource);
+        // res.redirect();
+    });
+  });
 
 
 module.exports = router;

@@ -78,9 +78,10 @@ var dashboardroutes = require('./routes/dashboard-routes');
 
 app.use("/", routes);
 app.use("/users", users);
-app.use("/resources", resources)
+//app.use("/resources", resources)
 
 app.use("/", resources);
+app.use("/getresources", resources);
 //app.use("/api-routes", apiroutes);
 app.use("/html-routes", htmlroutes);
 app.use("/dashboard-routes", dashboardroutes);
