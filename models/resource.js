@@ -88,7 +88,13 @@ module.exports = function (sequelize, DataTypes) {
     immigration_assist: {
         type: DataTypes.STRING, allowNull: true, defaultValue: false
     },
-    
+    item_name: {
+        type: DataTypes.STRING
+    },
+    item_description: {
+        type: DataTypes.STRING
+    }
+
 },
 {
     timestamps: false
