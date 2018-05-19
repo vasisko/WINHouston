@@ -15,7 +15,7 @@ module.exports = function(app) {
 
 // //**************************************
   // GET route for getting all of the resources:  Show all resources in list on members dashboard
-  app.get("/api/resources", function(req, res) {
+  app.get("/resources", function(req, res) {
     db.Resource.findAll({})
       .then(function(dbResource) {
         res.json(dbResource);
@@ -62,7 +62,7 @@ module.exports = function(app) {
   // });
 
   // DELETE route for deleting posts
-  app.delete("/api/resources/:id", function(req, res) {
+  app.delete("/resources/:id", function(req, res) {
     db.Resource.destroy({
       where: {
         id: req.params.id

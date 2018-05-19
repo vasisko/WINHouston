@@ -1,14 +1,11 @@
 // When form is submitted on members.hbrs page, this code responds
-alert("you hit the right comand")
 $(document).ready(function() {
     
- 
 //Event listener to list resources
-  $(document).on("submit", "#listAll", test);
+  $(document).on("submit", "#dashboardListAll", handleFormSubmit);
 
- var test = function(){
-   alert("you hit the right comand 2")
- }
+// checked to this point!***********************************
+
 // TBD later :
  //Event listener for delete resource button  
 //   $(document).on("click", ".delete-resource", handleDeleteButtonPress);
@@ -16,31 +13,39 @@ $(document).ready(function() {
 // Member request to view resources, this function gets the resources
 //   getResources();
 
+// A function for handling what happens when the form to create a new post is submitted
+function handleFormSubmit(event) {
+  event.preventDefault();
+  alert("you hit here 1st")
+  getResources(); 
+}
+
     // get resources from DB and get ready to post on members dashboard in table (****fix this function to do that)
     function getResources() {
-        $.get("/api/resources", function(data) {
+      alert("you hit here 2nd")
+        $.get("/resources", function(data) {
             console.log(data);
-          var rowsToAdd = [];
-          for (var i = 0; i < data.length; i++) {
-            rowsToAdd.push(createResourceRow(data[i]));
-          }
-          renderResourceList(rowsToAdd);
-          nameInput.val("");
+          // var rowsToAdd = [];
+          // for (var i = 0; i < data.length; i++) {
+          //   rowsToAdd.push(createResourceRow(data[i]));
+          // }
+          // renderResourceList(rowsToAdd);
+          // nameInput.val("");
         });
       }
 
 // Function for creating a new list row for authors
-function createResourceRow(resourceData) {
-    console.log(resourceData);
-    // var newTr = $("<tr>");
-    // newTr.data("author", resourceData);
-    // newTr.append("<td>" + resourceData.name + "</td>");
-    // newTr.append("<td># of posts will display when we learn joins in the next activity!</td>");
-    // newTr.append("<td><a href='/blog?author_id=" + authorData.id + "'>Go to Posts</a></td>");
-    // newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Create a Post</a></td>");
-    // newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
-    // return newTr;
-  }
+// function createResourceRow(resourceData) {
+//     console.log(resourceData);
+//     // var newTr = $("<tr>");
+//     // newTr.data("author", resourceData);
+//     // newTr.append("<td>" + resourceData.name + "</td>");
+//     // newTr.append("<td># of posts will display when we learn joins in the next activity!</td>");
+//     // newTr.append("<td><a href='/blog?author_id=" + authorData.id + "'>Go to Posts</a></td>");
+//     // newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Create a Post</a></td>");
+//     // newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
+//     // return newTr;
+//   }
 
 
 

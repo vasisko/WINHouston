@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
 	<title>MVC With WIN!</title>
 	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="/routes/resources.js"></script> {{!--
+	{{!--<script src="/routes/resources.js"></script> 
 	<script src="/assets/js/win.js"></script> --}}
 </head>
 
@@ -68,7 +68,9 @@
 			<div class="alert alert-danger">{{error_msg}}</div>
 			{{/if}} {{#if error}}
 			<div class="alert alert-danger">{{error}}</div>
-			{{/if}} {{{ body }}}
+			{{/if}} 
+			
+			{{{ body }}}
 </body>
 <div class="text-center">
 	<div class="footer"> &copyCopyright 2018 Alan, Carolyn, Oluwatoyin, Scott</div>
