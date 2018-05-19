@@ -13,7 +13,7 @@ console.log("passed get");//MAKES IT HERE
 // router.get("/resources", function(req, res) {
 //     db.Resource.findAll({}).then(function(dbResource) {
 //         console.log("In resources.hbrs");
-//         res.json(dbResource);
+//         // res.json(dbResource);
 //         //res.redirect('/resources');
 //     });
 //   });
