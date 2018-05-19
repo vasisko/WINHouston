@@ -51,6 +51,7 @@ a{
 
 }
 
-success_msg{
-    width: 20px;
+
+#success_msg{
+   background-color: red;
 }
