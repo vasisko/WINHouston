@@ -20,6 +20,7 @@ router.get('/login', function (req, res) {
 router.get('/members', function (req, res){
     res.render('members');
 })
+
 //add router.post for log in
 //Incoming form data
 console.log("Here line 20");
@@ -93,19 +94,19 @@ router.post('/register', function (req, res) {
 passport.use(new LocalStrategy(
     // Our user will sign in using an email, rather than a "username"
     {
-      username: "email"
+      username: "username"
     },
-    function(email, password, done) {
+    function(username, password, done) {
       // When a user tries to sign in this code runs
       db.User.findOne({
         where: {
-          email: email
+          username: username
         }
       }).then(function(dbUser) {
         // If there's no user with the given email
         if (!dbUser) {
           return done(null, false, {
-            message: "Incorrect email."
+            message: "Incorrect username."
           });
         }
         // If there is a user with the given email, but the password the user gives us is incorrect
@@ -131,10 +132,7 @@ passport.use(new LocalStrategy(
     cb(null, obj);
   });
 
-// router.post('/login', passport.authenticate("local"), function (req, res) {
-   
 
-//             res.redirect('/users/members');
     
 //         });
         router.post('/login',
