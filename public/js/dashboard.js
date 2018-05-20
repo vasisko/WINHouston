@@ -1,34 +1,28 @@
 // When form is submitted on members.hbrs page, this code responds
 $(document).ready(function() {
 
+  //do not show member list unless requested
+  //$("#resourceForm").hide();
+
   var nameInput = $("#resource-name");
   var resourceList = $("tbody");
   var resourceContainer = $(".resource-container");
 
-//Event listener to list resources
+//Event listener to list resources from both forms
   $(document).on("submit", "#dashboardListAll", handleFormSubmit);
+  $(document).on("submit", "#memberAddService", handleServiceFormSubmit);
 
-// checked to this point!***********************************
-
-// TBD later :
- //Event listener for delete resource button  
-//   $(document).on("click", ".delete-resource", handleDeleteButtonPress);
-
-// Member request to view resources, this function gets the resources
-//   getResources();
-
-// A function for handling what happens when the form to create a new post is submitted
+// MEMBER LIST------------------------------------
+//A function for handling what happens when the form to create a new post is submitted
 function handleFormSubmit(event) {
   event.preventDefault();
-  alert("you hit here 1st")
+ 
   getResources(); 
 }
 
     // get resources from DB and get ready to post on members dashboard in table (****fix this function to do that)
     function getResources() {
-      alert("you hit here 2nd")
      
-
         $.get("/getresources", function(data) {
             console.log(data);
           var rowsToAdd = [];
@@ -80,19 +74,16 @@ function createResourceRow(resourceData) {
     alertDiv.text("No resources available at this time");
     resourceContainer.append(alertDiv);
   }
+//End of member listing -----------------------
 
-
-
-//  TBD later:    // Function for handling what happens when the delete button is pressed
-//   function handleDeleteButtonPress() {
-//     var listItemData = $(this).parent("td").parent("tr").data("resource");
-//     var id = listItemData.id;
-//     $.ajax({
-//       method: "DELETE",
-//       url: "/api/resources/" + id
-//     })
-//       .then(getResources);
-//   }
+// REGISTER SERVICES--------------------
+//A function for handling what happens when the form to create a new post is submitted
+function handleServiceFormSubmit(event) {
+  event.preventDefault();
+ 
+  $.post("/getresources", function(data) {
+  });
+};
 
 
 
