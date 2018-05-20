@@ -23,6 +23,7 @@ body{
 }
 a{
     color:gold;
+    
 }
 .footer {
     position: fixed;
@@ -54,4 +55,12 @@ a{
 
 #success_msg{
    background-color: red;
+}
+#memberList a { 
+    text-decoration:none;
+    color: #800080;
+}
+#indexlinks a { 
+    text-decoration:none;
+    color: #800080;
 }

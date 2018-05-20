@@ -1,40 +1,27 @@
-<h2>Member's Page</h2>
+<h2>Member Dashboard</h2>
 
 {{#if errors}} {{#each errors}}
 <div class="alert alert-danger">{{msg}}</div>
 {{/each}} {{/if}}
 
-<h3>Resource Dashboard</h3>
-<!--List all resources -->
-
-<p><a href="addItem.html" target="new">Add an item</a></p>
-
+<!--  MEMBER LIST  -->
 <form id="dashboardListAll">
-
- <!-- For now :  just list all   
-    
-     Next: Add in functionality to define how to list .....by item, by source, by location, by category, 
-    ..... and at end add text delete link for each item
-
     <div class="form-group">
-        <label>Item </label><br>
-        <input type="text" placeholder="item" name="itemName"> text input
-    </div>
-    <div class="form-group">
-        <label>Source </label><br>
-        <input type="text" placeholder="source" name="userName">text input
-    </div>
-    <div class="form-group">
-        <label>Category </label><br>
-        <input type="text" placeholder="category" name="itemCategory"> list of categories
-    </div>
- -->
-    <div class="form-group">
-        <button type="submit" class="btn btn-success">Member List</button>
+        <button type="submit" class="btn btn-warning">Member Listing</button>
     </div>
 </form>
 
+<!--  MEMBER ADD SERVICES  -->
+    <div class="form-group">
+        <a href="memberAddServ.handlebars"><button type="submit" class="btn btn-warning">Register Services</button></a>
+    </div>
+<!--  NEEDS LIST  -->
+    <div class="form-group">
+        <a href="memberAddServ.handlebars"><button type="submit" class="btn btn-warning">Needs Listing</button></a>
+    </div>
+
 <!-- List of Resources goes below form  -->
+    <div id="memberList">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="resources-container">
@@ -59,6 +46,9 @@
             </div>
         </div>
     </div>
+    </div>
+
+
 
     <!-- Script for dynamically filling list of resources -->
     <script src="/js/dashboard.js" type="text/javascript"></script>
