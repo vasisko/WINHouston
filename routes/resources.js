@@ -4,9 +4,9 @@ var express = require('express');
 var router = express.Router();
 
 
-// router.get('/resources', function (req, res) {
-//     res.render('resources');
-// });
+router.get('/resources', function (req, res) {
+    res.render('resources');
+});
 
 console.log("passed get");//MAKES IT HERE
 
