@@ -29,7 +29,7 @@ function handleFormSubmit(event) {
       alert("you hit here 2nd")
      
 
-        $.get("/resources", function(data) {
+        $.get("/getresources", function(data) {
             console.log(data);
           var rowsToAdd = [];
           for (var i = 0; i < data.length; i++) {

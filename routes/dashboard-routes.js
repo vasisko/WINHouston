@@ -1,10 +1,3 @@
-// **************************************************
-// dashboard.js - this file offers a set of routes for displaying and saving data to the db from the members dashboard
-// **************************************************
-
-// Dependencies
-// ==================================================
-
 // Requiring our resource model
 var db = require("../models");
 
@@ -15,7 +8,7 @@ module.exports = function(app) {
 
 // //**************************************
   // GET route for getting all of the resources:  Show all resources in list on members dashboard
-  app.get("/resources", function(req, res) {
+  app.get("/getresources", function(req, res) {
     db.Resource.findAll({})
       .then(function(dbResource) {
         res.json(dbResource);

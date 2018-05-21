@@ -19,6 +19,7 @@ $(document).ready(function () {
     event.preventDefault();
     getResources();
     reqresources();
+    // doubles();
 
 
   }
@@ -312,11 +313,28 @@ if ($('#medicine').is(":checked")) {
 }
 }
 }
-$("#placement").prepend("<p>These services are available in your area:     "+reqServices+  "<p><br/>");
+console.log(reqServices);
+$("#placement").prepend("<p>These services are available in your area:     "+reqServices+  "<p><br/>"); 
+
  })
+ 
+//  if (reqServices.length >0){
+//   console.log("we made it to doubles");
+// for (i=0; i<reqServices.length; i++){
+// for (j=1; j<reqServices.length; j++){
+// if (reqServices[i]===reqServices[j]){
+// reqServices[j]==="_";
+// }
+// }
+// }
 
-  };
+// }
 
-  
+
+}
+
+
+
+
 
 });
