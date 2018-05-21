@@ -14,6 +14,9 @@ $(document).ready(function () {
   function searchAll(event) {
     event.preventDefault();
     getResources();
+    resources();
+    
+    
     
 
   }
@@ -31,7 +34,12 @@ $(document).ready(function () {
 
  }
 
+
+
+
+
   }
+
 
   function getResources() {
 
@@ -135,20 +143,167 @@ $(document).ready(function () {
 
           }
         }
-        console.log(winLocations);
-        resources(winLocations, winServices);
-        
       }
+      
+
+      if ($('#housing').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].housing === $("#housing").val()) {winServicesLoc.push("housing");
+          console.log("housing");
+        }  
+      };
+    }
+
+    if ($('#clothing').is(":checked")) {
+      for (i = 0; i < winLocations.length; i++) {
+        if (winLocations[i].clothing === $("#clothing").val()) {winServicesLoc.push("clothing");
+        
+      }  
+    };
+  }
+
+  if ($('#babysitting').is(":checked")) {
+    for (i = 0; i < winLocations.length; i++) {
+      if (winLocations[i].babysitting === $("#babysitting").val()) {winServicesLoc.push("babysitting");
+    
+    }  
+  };
+}
+
+if ($('#infant_items').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+    if (winLocations[i].infant_items === $("#infant_items").val()) {winServicesLoc.push("infant_items");
+    
+  }  
+};
+}
+
+if ($('#daycare').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+    if (winLocations[i].daycare === $("#daycare").val()) {winServicesLoc.push("daycare");
+   
+  }  
+};
+}
+
+if ($('#school_supplies').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+    if (winLocations[i].school_supplies === $("#school_supplies").val()) {winServicesLoc.push("school_supplies");
+    
+  }  
+};
+}
+      
+if ($('#employment').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+    if (winLocations[i].employment === $("#employment").val()) {winServicesLoc.push("employment");
+    
+  }  
+};
+}
+if ($('#counseling').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+    if (winLocations[i].counseling === $("#counseling").val()) {winServicesLoc.push("counseling");
+    
+  }  
+};
+}
+if ($('#immigration_assist').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+    if (winLocations[i].immigration_assist === $("#immigration_assist").val()) {winServicesLoc.push("immigration_assist");
+    
+  }  
+};
+}
+
+if ($('#doctor_visit').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+    if (winLocations[i].doctor_visit === $("#doctor_visit").val()) {winServicesLoc.push("doctor_visit");
+    
+  }  
+};
+}
+if ($('#legal_aide').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+    if (winLocations[i].legal_aide === $("#legal_aide").val()) {winServicesLoc.push("legal_aide");
+    
+  }  
+};
+}
+if ($('#drug_addiction').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+    if (winLocations[i].drug_addiction === $("#drug_addiction").val()) {winServicesLoc.push("drug_addiction");
+    
+  }  
+};
+}
+if ($('#furniture').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+if (winLocations[i].furniture === $("#furniture").val()) {winServicesLoc.push("furniture");
+    
+  }  
+};
+}
+if ($('#domestic_violence').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+    if (winLocations[i].domestic_violence === $("#domestic_violence").val()) {winServicesLoc.push("domestic_violence");
+    
+  }  
+};
+}
+if ($('#bus_pass').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+    if (winLocations[i].bus_pass === $("#bus_pass").val()) {winServicesLoc.push("bus_pass");
+    
+  }  
+};
+}
+if ($('#internet_phone_tech').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+    if (winLocations[i].internet_phone_tech === $("#internet_phone_tech").val()) {winServicesLoc.push("internet_phone_tech");
+    
+  }  
+};
+}
+if ($('#auto_repair').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+    if (winLocations[i].auto_repair === $("#auto_repair").val()) {winServicesLoc.push("auto_repair");
+    
+  }  
+};
+}
+if ($('#food').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+    if (winLocations[i].food === $("#food").val()) {winServicesLoc.push("food");
+    
+  }  
+};
+}
+if ($('#medicine').is(":checked")) {
+  for (i = 0; i < winLocations.length; i++) {
+    if (winLocations[i].medicine === $("#medicine").val()) {winServicesLoc.push("medicine");
+    
+  }  
+};
+}
 
 
+$("#placement").prepend("<p> These resources are available in your area      "   +winServicesLoc+   ",   </p><br/>") 
 
-      // resources(winLocations);
+      
       $("#resourceForm").hide();
       $("#resourceTable").show();
-
+  
 
     });
+
+
+
   }
+
+
+  
+  
 
 
 
