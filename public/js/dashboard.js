@@ -23,6 +23,8 @@ function handleFormSubmit(event) {
     // get resources from DB and get ready to post on members dashboard in table (****fix this function to do that)
     function getResources() {
      
+
+
         $.get("/getresources", function(data) {
             console.log(data);
           var rowsToAdd = [];
