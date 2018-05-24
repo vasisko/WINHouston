@@ -1,4 +1,5 @@
-# WIN Houston:  Connecting women in need in Houston with resources
+# WIN Houston:  
+# Connecting women in need in Houston with resources
 
 This application provides Women In Need in Houston with a means for accessing resources in times of need.  The application provides a simple interface to make it easy for those in crisis to fill out a needs survey and quickly receive a list of area resources in return.
 
