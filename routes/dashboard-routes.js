@@ -2,12 +2,11 @@
 var db = require("../models");
 
 // Routes
-// =============================================================
 module.exports = function(app) {
 
 
-// //**************************************
-  // GET route for getting all of the resources:  Show all resources in list on members dashboard
+
+// GET route for getting all of the resources:  
   app.get("/getresources", function(req, res) {
     db.Resource.findAll({})
       .then(function(dbResource) {
@@ -15,7 +14,6 @@ module.exports = function(app) {
       });
   });
 
- 
   // POST for creating new member listing
   app.post("/getresources", function(req, res) {
     db.Resource.create({
@@ -24,7 +22,8 @@ module.exports = function(app) {
       category: req.body.category
     })
       .then(function(dbResource) {
-        res.json(dbResource);
+      
+        
       });
   });
 

@@ -21,6 +21,10 @@ router.get('/members', function (req, res){
     res.render('members');
 })
 
+router.get('/membersAddServ', function (req, res){
+    res.render('membersAddServ');
+})
+
 //add router.post for log in
 //Incoming form data
 console.log("Here line 20");
