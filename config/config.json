@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "Norman12",
+=======
+    "password": "Mysqlr00t",
+>>>>>>> 3b1469e07f25983505ac9bbc23c559525b33ff56
 
     "database": "win",
     "host": "127.0.0.1",
