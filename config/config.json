@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
     "password": "Norman12",
-=======
-    "password": "Mysqlr00t",
->>>>>>> 3b1469e07f25983505ac9bbc23c559525b33ff56
 
     "database": "win",
     "host": "127.0.0.1",
@@ -20,9 +16,6 @@
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql",
-    "host": "s3lkt7lynu0uthj8.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "username":"gtnmyji0gdcw824py",
-    "password":"chkx99k3ivtgocwc"
+    "dialect": "mysql"
   }
 }

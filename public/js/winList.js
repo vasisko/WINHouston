@@ -18,16 +18,9 @@ $(document).ready(function () {
   function searchAll(event) {
     event.preventDefault();
     getResources();
-<<<<<<< HEAD
-    resources();
-    
-    
-    
-=======
     reqresources();
     // doubles();
 
->>>>>>> 3b1469e07f25983505ac9bbc23c559525b33ff56
 
   }
 
@@ -46,17 +39,8 @@ $(document).ready(function () {
 
     }
 
-
-
-
-
   }
-<<<<<<< HEAD
 
-
-=======
-  
->>>>>>> 3b1469e07f25983505ac9bbc23c559525b33ff56
   function getResources() {
 
 
@@ -77,9 +61,8 @@ $(document).ready(function () {
             var website = data[i].website;
 
 
-
             $("#placement").append("<p id='title'>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
-
+          }
 
         }
 
@@ -97,10 +80,7 @@ $(document).ready(function () {
             var email = data[i].email;
             var phone = data[i].phone;
             var website = data[i].website;
-
-            
             $("#placement").append("<p id='title'>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
-
           }
         }
         console.log(winLocations);
@@ -116,9 +96,7 @@ $(document).ready(function () {
             var email = data[i].email;
             var phone = data[i].phone;
             var website = data[i].website;
-
             $("#placement").append("<p id='title'>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
-
           }
         }
         console.log(winLocations);
@@ -134,7 +112,6 @@ $(document).ready(function () {
             var email = data[i].email;
             var phone = data[i].phone;
             var website = data[i].website;
-
             $("#placement").append("<p id='title'>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
           }
         }
@@ -153,174 +130,20 @@ $(document).ready(function () {
             $("#placement").append("<p id='title'>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
           }
         }
-<<<<<<< HEAD
-      }
-      
-
-      if ($('#housing').is(":checked")) {
-        for (i = 0; i < winLocations.length; i++) {
-          if (winLocations[i].housing === $("#housing").val()) {winServicesLoc.push("housing");
-          console.log("housing");
-        }  
-      };
-    }
-
-    if ($('#clothing').is(":checked")) {
-      for (i = 0; i < winLocations.length; i++) {
-        if (winLocations[i].clothing === $("#clothing").val()) {winServicesLoc.push("clothing");
-        
-      }  
-    };
-  }
-
-  if ($('#babysitting').is(":checked")) {
-    for (i = 0; i < winLocations.length; i++) {
-      if (winLocations[i].babysitting === $("#babysitting").val()) {winServicesLoc.push("babysitting");
-    
-    }  
-  };
-}
-
-if ($('#infant_items').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].infant_items === $("#infant_items").val()) {winServicesLoc.push("infant_items");
-    
-  }  
-};
-}
-
-if ($('#daycare').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].daycare === $("#daycare").val()) {winServicesLoc.push("daycare");
-   
-  }  
-};
-}
-
-if ($('#school_supplies').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].school_supplies === $("#school_supplies").val()) {winServicesLoc.push("school_supplies");
-    
-  }  
-};
-}
-      
-if ($('#employment').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].employment === $("#employment").val()) {winServicesLoc.push("employment");
-    
-  }  
-};
-}
-if ($('#counseling').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].counseling === $("#counseling").val()) {winServicesLoc.push("counseling");
-    
-  }  
-};
-}
-if ($('#immigration_assist').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].immigration_assist === $("#immigration_assist").val()) {winServicesLoc.push("immigration_assist");
-    
-  }  
-};
-}
-
-if ($('#doctor_visit').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].doctor_visit === $("#doctor_visit").val()) {winServicesLoc.push("doctor_visit");
-    
-  }  
-};
-}
-if ($('#legal_aide').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].legal_aide === $("#legal_aide").val()) {winServicesLoc.push("legal_aide");
-    
-  }  
-};
-}
-if ($('#drug_addiction').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].drug_addiction === $("#drug_addiction").val()) {winServicesLoc.push("drug_addiction");
-    
-  }  
-};
-}
-if ($('#furniture').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-if (winLocations[i].furniture === $("#furniture").val()) {winServicesLoc.push("furniture");
-    
-  }  
-};
-}
-if ($('#domestic_violence').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].domestic_violence === $("#domestic_violence").val()) {winServicesLoc.push("domestic_violence");
-    
-  }  
-};
-}
-if ($('#bus_pass').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].bus_pass === $("#bus_pass").val()) {winServicesLoc.push("bus_pass");
-    
-  }  
-};
-}
-if ($('#internet_phone_tech').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].internet_phone_tech === $("#internet_phone_tech").val()) {winServicesLoc.push("internet_phone_tech");
-    
-  }  
-};
-}
-if ($('#auto_repair').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].auto_repair === $("#auto_repair").val()) {winServicesLoc.push("auto_repair");
-    
-  }  
-};
-}
-if ($('#food').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].food === $("#food").val()) {winServicesLoc.push("food");
-    
-  }  
-};
-}
-if ($('#medicine').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].medicine === $("#medicine").val()) {winServicesLoc.push("medicine");
-    
-  }  
-};
-}
-=======
 
         // check console log and running resource function
         console.log(winLocations);
         resources(winLocations);
->>>>>>> 3b1469e07f25983505ac9bbc23c559525b33ff56
 
       }
 
-$("#placement").prepend("<p> These resources are available in your area      "   +winServicesLoc+   ",   </p><br/>") 
 
-<<<<<<< HEAD
-      
-=======
       // hide and show parts of html based on user activity
->>>>>>> 3b1469e07f25983505ac9bbc23c559525b33ff56
       $("#resourceForm").hide();
       $("#resourceTable").show();
-  
+
 
     });
-
-
-
   }
 
   function reqresources(data) {
@@ -342,11 +165,9 @@ $("#placement").prepend("<p> These resources are available in your area      "  
           if (winLocations[i].babysitting === $("#babysitting").val()) {
             reqServices.push("babysitting");
             console.log(reqServices)
-
           }
         }
       }
-
 
       if ($('#infant_items').is(":checked")) {
         for (i = 0; i < winLocations.length; i++) {
@@ -514,25 +335,19 @@ $("#placement").prepend("<p> These resources are available in your area      "  
 
 
 
-  
-  
-
-
 
       console.log(reqServices);
       $("#placement").prepend("<p>These services are available in your area:    <p id='services'> " + unique + "<p><p><br/>");
 
     })
 
-<<<<<<< HEAD
+
+
+
+  }
+
+
+
+
+
 });
-=======
-
-
-
-
-
-      // hide and show parts of html based on user activity
-      $("#resourceForm").hide();
-      $("#resourceTable").show();
->>>>>>> 3b1469e07f25983505ac9bbc23c559525b33ff56
