@@ -40,7 +40,7 @@ $(document).ready(function () {
     }
 
   }
-  
+
   function getResources() {
 
 
@@ -61,9 +61,8 @@ $(document).ready(function () {
             var website = data[i].website;
 
 
-
             $("#placement").append("<p id='title'>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
-
+          }
 
         }
 
@@ -81,10 +80,7 @@ $(document).ready(function () {
             var email = data[i].email;
             var phone = data[i].phone;
             var website = data[i].website;
-
-            
             $("#placement").append("<p id='title'>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
-
           }
         }
         console.log(winLocations);
@@ -100,9 +96,7 @@ $(document).ready(function () {
             var email = data[i].email;
             var phone = data[i].phone;
             var website = data[i].website;
-
             $("#placement").append("<p id='title'>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
-
           }
         }
         console.log(winLocations);
@@ -118,7 +112,6 @@ $(document).ready(function () {
             var email = data[i].email;
             var phone = data[i].phone;
             var website = data[i].website;
-
             $("#placement").append("<p id='title'>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
           }
         }
@@ -172,11 +165,9 @@ $(document).ready(function () {
           if (winLocations[i].babysitting === $("#babysitting").val()) {
             reqServices.push("babysitting");
             console.log(reqServices)
-
           }
         }
       }
-
 
       if ($('#infant_items').is(":checked")) {
         for (i = 0; i < winLocations.length; i++) {
@@ -353,8 +344,10 @@ $(document).ready(function () {
 
 
 
+  }
 
 
-      // hide and show parts of html based on user activity
-      $("#resourceForm").hide();
-      $("#resourceTable").show();
+
+
+
+});
