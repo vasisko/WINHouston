@@ -59,10 +59,11 @@ $(document).ready(function () {
             var email = data[i].email;
             var phone = data[i].phone;
             var website = data[i].website;
-            
 
-            $("#placement").append("<p>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
-          }
+
+
+            $("#placement").append("<p id='title'>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
+
 
         }
 
@@ -80,7 +81,10 @@ $(document).ready(function () {
             var email = data[i].email;
             var phone = data[i].phone;
             var website = data[i].website;
-            $("#placement").append("<p>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
+
+            
+            $("#placement").append("<p id='title'>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
+
           }
         }
         console.log(winLocations);
@@ -96,7 +100,9 @@ $(document).ready(function () {
             var email = data[i].email;
             var phone = data[i].phone;
             var website = data[i].website;
-            $("#placement").append("<p>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
+
+            $("#placement").append("<p id='title'>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
+
           }
         }
         console.log(winLocations);
@@ -112,7 +118,8 @@ $(document).ready(function () {
             var email = data[i].email;
             var phone = data[i].phone;
             var website = data[i].website;
-            $("#placement").append("<p>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
+
+            $("#placement").append("<p id='title'>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
           }
         }
       }
@@ -127,7 +134,7 @@ $(document).ready(function () {
             var email = data[i].email;
             var phone = data[i].phone;
             var website = data[i].website;
-            $("#placement").append("<p>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
+            $("#placement").append("<p id='title'>" + name + "</p><p>" + address + "</p><p>" + email + "</p><p> Phone: " + phone + "</p><p>" + website + "</p><br/>")
           }
         }
 
@@ -146,195 +153,208 @@ $(document).ready(function () {
     });
   }
 
-  function reqresources(data){
+  function reqresources(data) {
     console.log("req resources is firing");
- 
+
     $.get("/getresources", function (data) {
-     console.log("data is", data);
-  
-    if ($('#housing').is(":checked")) {
-     for (i = 0; i < winLocations.length; i++) {
-       if (winLocations[i].housing === $("#housing").val()) {
-         reqServices.push("housing");
-         console.log(reqServices)
-  }
- }
- }
- if ($('#babysitting').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].babysitting === $("#babysitting").val()) {
-      reqServices.push("babysitting");
-      console.log(reqServices)
-}
-}
-}
+      console.log("data is", data);
 
-if ($('#infant_items').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].infant_items === $("#infant_items").val()) {
-      reqServices.push("InfantItems");
-      console.log(reqServices)
-}
-}
-}
+      if ($('#housing').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].housing === $("#housing").val()) {
+            reqServices.push("housing");
+            console.log(reqServices)
+          }
+        }
+      }
+      if ($('#babysitting').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].babysitting === $("#babysitting").val()) {
+            reqServices.push("babysitting");
+            console.log(reqServices)
 
-if ($('#daycare').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].daycare === $("#daycare").val()) {
-      reqServices.push("daycare");
-      console.log(reqServices)
-}
-}
-}
+          }
+        }
+      }
 
-if ($('#school_supplies').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].school_supplies === $("#school_supplies").val()) {
-      reqServices.push("school_supplies");
-      console.log(reqServices)
-}
-}
-}
 
-if ($('#clothing').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].clothing === $("#clothing").val()) {
-      reqServices.push("clothing");
-      console.log(reqServices)
-}
-}
-}
+      if ($('#infant_items').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].infant_items === $("#infant_items").val()) {
+            reqServices.push("InfantItems");
+            console.log(reqServices)
+          }
+        }
+      }
 
-if ($('#counseling').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].counseling === $("#counseling").val()) {
-      reqServices.push("counseling");
-      console.log(reqServices)
-}
-}
-}
+      if ($('#daycare').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].daycare === $("#daycare").val()) {
+            reqServices.push("daycare");
+            console.log(reqServices)
+          }
+        }
+      }
 
-if ($('#employment').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].employment === $("#employment").val()) {
-      reqServices.push("employment");
+      if ($('#school_supplies').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].school_supplies === $("#school_supplies").val()) {
+            reqServices.push("school_supplies");
+            console.log(reqServices)
+          }
+        }
+      }
+
+      if ($('#clothing').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].clothing === $("#clothing").val()) {
+            reqServices.push("clothing");
+            console.log(reqServices)
+          }
+        }
+      }
+
+      if ($('#counseling').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].counseling === $("#counseling").val()) {
+            reqServices.push("counseling");
+            console.log(reqServices)
+          }
+        }
+      }
+
+      if ($('#employment').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].employment === $("#employment").val()) {
+            reqServices.push("employment");
+            console.log(reqServices);
+          }
+        }
+      }
+
+      if ($('#immigration_assist').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].immigration_assist === $("#immigration_assist").val()) {
+            reqServices.push("immigrationServices");
+            console.log(reqServices)
+          }
+        }
+      }
+
+      if ($('#doctor_visit').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].doctor_visit === $("#doctor_visit").val()) {
+            reqServices.push("Doctor");
+            console.log(reqServices)
+          }
+        }
+      }
+
+      if ($('#legal_aide').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].legal_aide === $("#legal_aide").val()) {
+            reqServices.push("legal");
+            console.log(reqServices)
+          }
+        }
+      }
+
+      if ($('#furniture').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].furniture === $("#furniture").val()) {
+            reqServices.push("furniture");
+            console.log(reqServices)
+          }
+        }
+      }
+
+      if ($('#domestic_violence').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].domestic_violence === $("#domestic_violence").val()) {
+            reqServices.push("domestic_violence");
+            console.log(reqServices)
+          }
+        }
+      }
+
+      if ($('#bus_pass').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].bus_pass === $("#bus_pass").val()) {
+            reqServices.push("bus_passes");
+            console.log(reqServices)
+          }
+        }
+      }
+
+      if ($('#internet_phone_tech').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].internet_phone_tech
+            === $("#internet_phone_tech").val()) {
+            reqServices.push("TechServices");
+            console.log(reqServices)
+          }
+        }
+      }
+
+      if ($('#auto_repair').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].auto_repair === $("#auto_repair").val()) {
+            reqServices.push("auto_repair");
+            console.log(reqServices)
+          }
+        }
+      }
+
+      if ($('#food').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].food === $("#food").val()) {
+            reqServices.push("food/SNAP");
+            console.log(reqServices)
+          }
+        }
+      }
+
+      if ($('#medicine').is(":checked")) {
+        for (i = 0; i < winLocations.length; i++) {
+          if (winLocations[i].medicine === $("#medicine").val()) {
+            reqServices.push("medicine");
+            console.log(reqServices)
+          }
+        }
+      }
+
+
+      // function and process for removing duplicates
+      function onlyUnique(value, index, self) {
+        return self.indexOf(value) === index;
+      }
+
+      var unique = reqServices.filter(onlyUnique);
+      console.log(unique);
+
+      for (i = 0; i < unique.length; i++) {
+        console.log("this is firing line 327 for underscore");
+        console.log(unique[i]);
+        unique[i] = unique[i].replace(/_|\-/, " ");
+        console.log(unique[i]);
+      }
+
+
+
+
+
+
+
       console.log(reqServices);
-}
-}
-}
+      $("#placement").prepend("<p>These services are available in your area:    <p id='services'> " + unique + "<p><p><br/>");
 
-if ($('#immigration_assist').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].immigration_assist === $("#immigration_assist").val()) {
-      reqServices.push("immigrationServices");
-      console.log(reqServices)
-}
-}
-}
-
-if ($('#doctor_visit').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].doctor_visit === $("#doctor_visit").val()) {
-      reqServices.push("Doctor");
-      console.log(reqServices)
-}
-}
-}
-
-if ($('#legal_aide').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].legal_aide === $("#legal_aide").val()) {
-      reqServices.push("legal");
-      console.log(reqServices)
-}
-}
-}
-
-if ($('#furniture').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].furniture === $("#furniture").val()) {
-      reqServices.push("furniture");
-      console.log(reqServices)
-}
-}
-}
-
-if ($('#domestic_violence').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].domestic_violence === $("#domestic_violence").val()) {
-      reqServices.push("domestic_violence");
-      console.log(reqServices)
-}
-}
-}
-
-if ($('#bus_pass').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].bus_pass === $("#bus_pass").val()) {
-      reqServices.push("bus_passes");
-      console.log(reqServices)
-}
-}
-}
-
-if ($('#internet_phone_tech').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].internet_phone_tech
-      === $("#internet_phone_tech").val()) {
-      reqServices.push("TechServices");
-      console.log(reqServices)
-}
-}
-}
-
-if ($('#auto_repair').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].auto_repair === $("#auto_repair").val()) {
-      reqServices.push("auto_repair");
-      console.log(reqServices)
-}
-}
-}
-
-if ($('#food').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].food === $("#food").val()) {
-      reqServices.push("food/SNAP");
-      console.log(reqServices)
-}
-}
-}
-
-if ($('#medicine').is(":checked")) {
-  for (i = 0; i < winLocations.length; i++) {
-    if (winLocations[i].medicine === $("#medicine").val()) {
-      reqServices.push("medicine");
-      console.log(reqServices)
-}
-}
-}
-console.log(reqServices);
-$("#placement").prepend("<p>These services are available in your area:     "+reqServices+  "<p><br/>"); 
-
- })
- 
-//  if (reqServices.length >0){
-//   console.log("we made it to doubles");
-// for (i=0; i<reqServices.length; i++){
-// for (j=1; j<reqServices.length; j++){
-// if (reqServices[i]===reqServices[j]){
-// reqServices[j]==="_";
-// }
-// }
-// }
-
-// }
-
-
-}
+    })
 
 
 
 
 
-});
+
+      // hide and show parts of html based on user activity
+      $("#resourceForm").hide();
+      $("#resourceTable").show();
