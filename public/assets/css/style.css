@@ -1,28 +1,25 @@
 body{
     /* background-color:rgba(0, 81, 255, 0.726); */
-    background-color:rgba(0, 183, 255, 0.726);
-    padding-top: 60px;
-    padding-bottom: 60px;
-    margin-left: 40px;
-    margin-right: 40px;
+    background-color:white;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-   
+    font-size: 16px;  
 }
-/* .navbar-brand{
-    justify-content: center;
-} */
+nav {background-color:#9999ff;}
 .navbar-brand{
-    font-size: 50px;
+    font-size: 4rem;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     margin-top:10px;
     margin-bottom:10px;
+    text-shadow: 1px 2px grey;
+    
 }
 .navbar-brand:hover{
-    color:gold;
-}
+    color:black;
+
+}   
 a{
-    color:gold;
+    color:#333333;
+    
 }
 .footer {
     position: fixed;
@@ -54,4 +51,19 @@ a{
 
 #success_msg{
    background-color: red;
+}
+#memberList a { 
+    text-decoration:none;
+    color: #9999ff;
+}
+.indexlinks { 
+    text-decoration:none;
+    color: #9999ff;
+    font-weight: bold;
+}
+#title {
+    font-weight: bold;
+}
+#services{
+    font-weight: bold;
 }
