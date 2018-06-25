@@ -81,3 +81,6 @@ https://github.com/someknow
 
 * Carolyn Vasisko
 https://github.com/vasisko
+
+
+heroku deployment: https://git.heroku.com/young-coast-31457.git (fetch)
